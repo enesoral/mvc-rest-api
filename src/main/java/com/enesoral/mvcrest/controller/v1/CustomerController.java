@@ -2,7 +2,10 @@ package com.enesoral.mvcrest.controller.v1;
 
 import com.enesoral.mvcrest.api.v1.model.CustomerDto;
 import com.enesoral.mvcrest.api.v1.model.CustomerListDto;
+import com.enesoral.mvcrest.config.SwaggerConfig;
 import com.enesoral.mvcrest.service.CustomerService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,12 +14,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(CustomerController.BASE_URL)
 @RequiredArgsConstructor
+@Api(tags = {SwaggerConfig.CUSTOMER_CONTROLLER_TAG})
 public class CustomerController {
 
     public static final String BASE_URL = "/api/v1/customers";
     private final CustomerService customerService;
 
     @GetMapping
+    @ApiOperation(value = "This will get a list of customers.", notes = "Some additional notes about the endpoint.")
     public ResponseEntity<CustomerListDto> getCustomersList() {
         return new ResponseEntity<>(new CustomerListDto(customerService.findAllCustomers()), HttpStatus.OK);
     }
