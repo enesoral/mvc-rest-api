@@ -12,18 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/category/")
+@RequestMapping(CategoryController.BASE_URL)
 @RequiredArgsConstructor
 public class CategoryController {
 
+    public static final String BASE_URL = "/api/v1/categories";
     private final CategoryService categoryService;
 
-    @GetMapping("all")
+    @GetMapping
     public ResponseEntity<CategoryListDto> getAllCategories() {
         return new ResponseEntity<>(new CategoryListDto(categoryService.getAllCategories()), HttpStatus.OK);
     }
 
-    @GetMapping("{name}")
+    @GetMapping("/{name}")
     public ResponseEntity<CategoryDto> getCategoryByName(@PathVariable String name) {
         return new ResponseEntity<>(categoryService.getCategoryByName(name), HttpStatus.OK);
     }
