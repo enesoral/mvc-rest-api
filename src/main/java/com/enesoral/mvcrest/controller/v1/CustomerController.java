@@ -1,7 +1,7 @@
 package com.enesoral.mvcrest.controller.v1;
 
-import com.enesoral.mvcrest.api.v1.model.CustomerDto;
-import com.enesoral.mvcrest.api.v1.model.CustomerListDto;
+import com.enesoral.mvcrest.generated.CustomerDto;
+import com.enesoral.mvcrest.generated.CustomerListDto;
 import com.enesoral.mvcrest.config.SwaggerConfig;
 import com.enesoral.mvcrest.service.CustomerService;
 import io.swagger.annotations.Api;
@@ -23,7 +23,9 @@ public class CustomerController {
     @GetMapping
     @ApiOperation(value = "This will get a list of customers.", notes = "Some additional notes about the endpoint.")
     public ResponseEntity<CustomerListDto> getCustomersList() {
-        return new ResponseEntity<>(new CustomerListDto(customerService.findAllCustomers()), HttpStatus.OK);
+        CustomerListDto customerListDto = new CustomerListDto();
+        customerListDto.getCustomers().addAll(customerService.findAllCustomers());
+        return new ResponseEntity<>(customerListDto, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

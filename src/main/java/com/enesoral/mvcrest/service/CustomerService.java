@@ -1,6 +1,6 @@
 package com.enesoral.mvcrest.service;
 
-import com.enesoral.mvcrest.api.v1.model.CustomerDto;
+import com.enesoral.mvcrest.generated.CustomerDto;
 
 import java.util.List;
 

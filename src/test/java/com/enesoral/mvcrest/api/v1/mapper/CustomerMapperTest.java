@@ -1,6 +1,6 @@
 package com.enesoral.mvcrest.api.v1.mapper;
 
-import com.enesoral.mvcrest.api.v1.model.CustomerDto;
+import com.enesoral.mvcrest.generated.CustomerDto;
 import com.enesoral.mvcrest.domain.Customer;
 import org.junit.jupiter.api.Test;
 

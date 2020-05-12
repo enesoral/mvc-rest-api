@@ -1,7 +1,7 @@
 package com.enesoral.mvcrest.controller.v1;
 
 import com.enesoral.mvcrest.api.v1.mapper.CustomerMapper;
-import com.enesoral.mvcrest.api.v1.model.CustomerDto;
+import com.enesoral.mvcrest.generated.CustomerDto;
 import com.enesoral.mvcrest.bootstrap.DataInitializer;
 import com.enesoral.mvcrest.domain.Customer;
 import com.enesoral.mvcrest.repository.CategoryRepository;

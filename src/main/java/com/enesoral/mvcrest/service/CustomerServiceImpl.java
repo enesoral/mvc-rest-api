@@ -1,9 +1,9 @@
 package com.enesoral.mvcrest.service;
 
 import com.enesoral.mvcrest.api.v1.mapper.CustomerMapper;
-import com.enesoral.mvcrest.api.v1.model.CustomerDto;
-import com.enesoral.mvcrest.controller.v1.CustomerController;
 import com.enesoral.mvcrest.domain.Customer;
+import com.enesoral.mvcrest.generated.CustomerDto;
+import com.enesoral.mvcrest.controller.v1.CustomerController;
 import com.enesoral.mvcrest.exception.ResourceNotFoundException;
 import com.enesoral.mvcrest.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
